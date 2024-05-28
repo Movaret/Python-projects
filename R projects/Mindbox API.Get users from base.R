@@ -16,7 +16,7 @@ setwd("") # set directory for log-files
 
 # parameters for sql-server
 sql_server <- '' # addres sql_server
-database_name <- ''       # database name. Important!!! The database must be on the server.
+database_name <- ''       # database name
 table_name <- 'Base_expanded'
 
 sql_login <- ''             # login to sql-server
@@ -95,8 +95,7 @@ url <-
         print("Save to sql-server")
         conn <- connect()
         
-        #dbExecute(conn, "TRUNCATE TABLE table")
-        #dbAppendTable(conn, table_name , table, row.names = NULL)
+
         dbWriteTable(conn, table_name, table, overwrite = TRUE)
         dbDisconnect(conn)
 
