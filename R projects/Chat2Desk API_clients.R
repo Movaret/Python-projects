@@ -12,7 +12,7 @@ setwd("") # set directory for log-files
 
 # parameters for sql-server
 sql_server <- '' # addres sql_server
-database_name <- ''       # database name. Important!!! The database must be on the server.
+database_name <- ''       # database name.
 table_name <- 'Chat2Desk_clients'
 
 sql_login <- ''             # login to sql-server
@@ -73,7 +73,7 @@ total <- ceiling(total_parsed[["meta"]][["total"]] / 200)
 
 offset <- 0
 
-#Следить за количеством
+
 for(i in 1:total) {
   
   res <- VERB("GET", url = paste0("https://api.chat2desk.com/v1/clients/?offset=",offset,"&limit=200"), add_headers(headers))
