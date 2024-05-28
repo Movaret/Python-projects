@@ -17,7 +17,7 @@ setwd("") # set directory for log-files
 
 # parameters for sql-server
 sql_server <- '' # addres sql_server
-database_name <- ''       # database name. Important!!! The database must be on the server.
+database_name <- ''       # database name
 table_name <- 'Segments'
 
 sql_login <- ''             # login to sql-server
