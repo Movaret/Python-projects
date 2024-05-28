@@ -12,7 +12,7 @@ setwd("") # set directory for log-files
 
 # parameters for sql-server
 sql_server <- '' # addres sql_server
-database_name <- ''       # database name. Important!!! The database must be on the server.
+database_name <- ''       # database name
 table_name <- 'Chat2Desk_dialogs'
 
 sql_login <- ''             # login to sql-server
@@ -60,11 +60,7 @@ dialogs <- data.frame('id' = integer(),
                        stringsAsFactors=FALSE)
 
 
-#res <- VERB("GET", url = "https://api.chat2desk.com/v1/clients/?offset=",$offset,"&limit=200", add_headers(headers))
-#res <- GET(paste("https://api.chat2desk.com/v1/clients/?offset=",offset,"&limit=200"), add_headers(headers))
-#parsed <- content(res, as = "parsed", type = "application/json",encoding="UTF-8")
 
-#????????? ???? ??? ??? ????????? total
 total_res <- VERB("GET", url = paste0("https://api.chat2desk.com/v1/dialogs/"), add_headers(headers))
 total_parsed <- content(total_res, as = "parsed", type = "application/json",encoding="UTF-8")
 
@@ -102,7 +98,6 @@ for(i in 1:total) {
   
 }
 
-#dialogs <- distinct(dialogs)
 
 colnames(dialogs)  <- c('Id',	'State', 'Begin', 'End', 'Operator_id', 'Transport', 'Client_id', 'Channel_id', 'Text', 'Status')
 
